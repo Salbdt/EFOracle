@@ -1,6 +1,7 @@
 ﻿using EFOracle.Data;
 using EFOracle.Entities;
 using Microsoft.EntityFrameworkCore;
+using Oracle.ManagedDataAccess.Client;
 
 namespace EFOracle.Queries
 {
@@ -28,6 +29,33 @@ namespace EFOracle.Queries
                     Console.WriteLine("Deshaciendo Oceania");
                     foreach (var region in context.Regions.ToList())
                         Console.WriteLine(region);
+                }
+            }
+        }
+        public static void Query(string connectionString, string query)
+        {
+            using (var context = new HRContext(connectionString))
+            {
+                try
+                {
+                    var affectedRows = context.Database.ExecuteSqlRaw(query);
+                    context.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException is not null && ex.InnerException is OracleException oracleEx)
+                        Console.WriteLine($"OracleException: {oracleEx.Message}");
+                    else
+                        Console.WriteLine($"DbUpdateException: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    if (ex.InnerException is not null && ex.InnerException is OracleException oracleEx)
+                        Console.WriteLine($"ExceptionOracle: {oracleEx.Message}");
+                    else if (ex.GetBaseException() is not null && ex.GetBaseException() is OracleException oracleExc)
+                        Console.WriteLine($"ExceptionOracle: {oracleExc.Message}");
+                    else
+                        Console.WriteLine($"Exception: {ex.Message}");
                 }
             }
         }

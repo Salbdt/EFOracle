@@ -25,7 +25,7 @@ namespace EFOracle.Queries
             catch (DbUpdateException ex)
             {
                 if (ex.InnerException is not null && ex.InnerException is OracleException oracleEx)
-                    Console.WriteLine($"OracleException: {ex.Message}");
+                    Console.WriteLine($"OracleException: {oracleEx.Message}");
                 else
                     Console.WriteLine($"DbUpdateException: {ex.Message}");
             }
@@ -61,7 +61,7 @@ namespace EFOracle.Queries
             catch (DbUpdateException ex)
             {
                 if (ex.InnerException is not null && ex.InnerException is OracleException oracleEx)
-                    Console.WriteLine($"OracleException: {ex.Message}");
+                    Console.WriteLine($"OracleException: {oracleEx.Message}");
                 else
                     Console.WriteLine($"DbUpdateException: {ex.Message}");
             }
@@ -93,7 +93,7 @@ namespace EFOracle.Queries
             catch (DbUpdateException ex)
             {
                 if (ex.InnerException is not null && ex.InnerException is OracleException oracleEx)
-                    Console.WriteLine($"OracleException: {ex.Message}");
+                    Console.WriteLine($"OracleException: {oracleEx.Message}");
                 else
                     Console.WriteLine($"DbUpdateException: {ex.Message}");
             }
@@ -125,7 +125,7 @@ namespace EFOracle.Queries
             catch (DbUpdateException ex)
             {
                 if (ex.InnerException is not null && ex.InnerException is OracleException oracleEx)
-                    Console.WriteLine($"OracleException: {ex.Message}");
+                    Console.WriteLine($"OracleException: {oracleEx.Message}");
                 else
                     Console.WriteLine($"DbUpdateException: {ex.Message}");
             }
