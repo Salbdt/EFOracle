@@ -60,3 +60,7 @@ Console.WriteLine();
 Console.WriteLine("PROCEDURE COUNTRIES_GET_ALL");
 Procedure.GetAll<Country>(connectionString, "COUNTRIES_GET_ALL");
 Console.WriteLine();
+
+// Ejemplo de Transacción
+Examples.Transaction(connectionString);
+Console.WriteLine();

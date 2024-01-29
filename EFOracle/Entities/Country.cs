@@ -18,6 +18,7 @@ namespace EFOracle.Entities
         [Column("REGION_ID")]
         public int RegionId { get; set; }
 
+        // Se utilizó el método ToString() especialmente para este proyecto de ejemplo
         public override string ToString()
         {
             return $"| ID: {Id} | Name: {Name.PadRight(40)} | RegionID: {RegionId} |";

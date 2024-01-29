@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFOracle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c93e14368da04e393cc4eef19ebe7364356a3629")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFOracle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFOracle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

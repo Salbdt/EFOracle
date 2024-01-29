@@ -17,7 +17,6 @@ namespace EFOracle.Queries
                         context.Set<T> es lo mismo que context.Countries o context.Regions
                         La T reemplaza a la entidad a mapear
                     */
-                    context.Set<T>().Update(entity);
                     int affectedRows = context.SaveChanges();
 
                     Console.WriteLine($"Update: filas afectadas {affectedRows}");
